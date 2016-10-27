@@ -139,7 +139,7 @@ public class Py {
      * @return Read a line from stdin and return the line as a string.
      */
     public static String input() {
-        return Py.scanner.next();
+        return Py.scanner.nextLine();
     }
 
     /**
@@ -148,7 +148,7 @@ public class Py {
      */
     public static String input(String prompt) {
         System.out.print(prompt);
-        return Py.scanner.next();
+        return Py.scanner.nextLine();
     }
 
     // ----------------------------------------------------------------------

@@ -34,10 +34,16 @@ public class TestPy {
 //        m.sysout();
 //        m.set();
 //        m.py_dot_str();
-        m.proba();
+//        m.proba();
+        m.input();
     }
 
-	private void proba() {
+	private void input() {
+        String s = Py.input("Line: ");
+        System.out.println(s);
+    }
+
+    private void proba() {
 //		List<Integer> li = Py.to_list(1, 2, 3);
 		List<String> li = Py.to_list("laci");
 		System.out.println(li);
