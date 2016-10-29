@@ -40,8 +40,8 @@ public class TestPy {
     }
 
 	private void file_read() {
-		String fpath = "/tmp/text.txt";
-		List<String> lines = Py.readlines(fpath);
+		String fpath = "/home/jabba/Dropbox/eclipse_ws/PyJava/src/test/resources/symbols.txt";
+		List<String> lines = Py.readlines(fpath, "iso-8859-1");
 		Py.print(lines);
 		Py.sep("-", 30);
         System.out.println("'" + Py.read(fpath) + "'");
