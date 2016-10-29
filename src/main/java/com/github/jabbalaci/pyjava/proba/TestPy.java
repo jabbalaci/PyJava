@@ -35,8 +35,17 @@ public class TestPy {
 //        m.set();
 //        m.py_dot_str();
 //        m.proba();
-        m.input();
+//        m.input();
+        m.file_read();
     }
+
+	private void file_read() {
+		String fpath = "/tmp/text.txt";
+		List<String> lines = Py.readlines(fpath);
+		Py.print(lines);
+		Py.sep("-", 30);
+        System.out.println("'" + Py.read(fpath) + "'");
+	}
 
 	private void input() {
         String s = Py.input("Line: ");

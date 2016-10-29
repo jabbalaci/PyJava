@@ -1,5 +1,12 @@
 package com.github.jabbalaci.pyjava;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 /**
  PyJava
  ======
@@ -17,7 +24,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -519,5 +528,89 @@ public class Py {
     public static void sep(String s, int rep) {
         System.out.println(PyStr.repeat(s, rep));
     }
+    
+    // ----------------------------------------------------------------------
+    // file reading
+    // ----------------------------------------------------------------------
+
+	/**
+	 * Read a text file and return its lines in a list.
+	 * Don't use it on a big file!
+	 * 
+	 * UTF-8 character encoding will be used by default.
+	 * Newline is not included at the end of the lines.
+	 * 
+	 * @param fpath Path of the input file.
+	 * @return A list of lines.
+	 */
+	public static List<String> readlines(String fpath) {
+		return Py.readlines(fpath, "UTF-8");
+	}
+	
+	/**
+	 * Read a text file and return its lines in a list.
+	 * Don't use it on a big file!
+	 * 
+	 * Newline is not included at the end of the lines.
+	 * 
+	 * @param fpath Path of the input file.
+	 * @param encoding Character encoding of the file.
+	 * @return A list of lines.
+	 */
+	public static List<String> readlines(String fpath, String encoding) {
+		Charset charset = Charset.forName(encoding);
+		Path p = Paths.get(fpath);
+		String line;
+		List<String> res = new ArrayList<String>();
+
+		try (BufferedReader reader = Files.newBufferedReader(p, charset)) {
+			while ((line = reader.readLine()) != null ) {
+				res.add(line); 
+			}
+		} catch (IOException e) {
+		    System.err.println(e);
+		    return null;
+		}
+		
+		return res;
+	}
+	
+	/**
+	 * Read the file and return its content in a string.
+	 * Don't use it on a big file!
+	 * 
+	 * @param fpath Path of the input file.
+	 * @return Content of the file in a string.
+	 */
+	public static String read(String fpath) {
+		return Py.read(fpath, "UTF-8");
+	}
+	
+	/**
+	 * Read the file and return its content in a string.
+	 * Don't use it on a big file!
+	 * 
+	 * @param fpath Path of the input file.
+	 * @param encoding Character encoding of the file.
+	 * @return Content of the file in a string.
+	 */
+	public static String read(String fpath, String encoding) {
+		Charset charset = Charset.forName(encoding);
+		Path p = Paths.get(fpath);
+		String line;
+		StringBuilder sb = new StringBuilder();
+
+		try (BufferedReader reader = Files.newBufferedReader(p, charset)) {
+			while ((line = reader.readLine()) != null ) {
+				sb.append(line);
+				sb.append('\n');
+			}
+		} catch (IOException e) {
+		    System.err.println(e);
+		    return null;
+		}
+		
+		return sb.toString();
+	}
 
 }

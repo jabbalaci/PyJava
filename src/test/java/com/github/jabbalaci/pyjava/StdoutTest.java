@@ -32,7 +32,7 @@ public class StdoutTest {
     
     private String getStdout() {
         System.out.flush();
-        return baos.toString();
+        return baos.toString().replace("\r\n", "\n");
     }
 
     @Test
@@ -111,6 +111,13 @@ public class StdoutTest {
     public void testSep_2() {
         Py.sep("ab", 3);
         assertEquals("ababab\n", this.getStdout());
+    }
+    
+    @Test
+    public void testSep_3() {
+        Py.sep("ab", 2);
+        Py.sep("ab", 2);
+        assertEquals("abab\nabab\n", this.getStdout());
     }
 
 }
