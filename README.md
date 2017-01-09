@@ -1,3 +1,7 @@
+**New (Jan 9, 2017):** This project is not maintained anymore. It was fun
+for 2 weeks, but then I realized I won't use it. If you want to add something
+to it, make a fork. Thanks.
+
 PyJava
 ======
 
@@ -31,15 +35,15 @@ Second:
         Py.print(Py.chr(i), " ");    // " " means: end=" "
     }
     Py.print();
-    
+
 Third:
 
 	// removing duplicates
 	//
-	// Consider the following list: [5, 2, 3, 5, 1, 4, -200, 5, 1, 3, 2, 2, 5] . 
-	// Remove the duplicates, i.e. an element should be present in the list maximum once. 
+	// Consider the following list: [5, 2, 3, 5, 1, 4, -200, 5, 1, 3, 2, 2, 5] .
+	// Remove the duplicates, i.e. an element should be present in the list maximum once.
 	// Let the result be a sorted list.
-	
+
 	List<Integer> li = Py.as_list(5, 2, 3, 5, 1, 4, -200, 5, 1, 3, 2, 2, 5);
 	Py.print(Py.sorted(Py.to_list(Py.to_set(li))));
 
@@ -62,9 +66,9 @@ Simply import the class `Py`:
 
 All its functions are static, so there is no need to instantiate it.
 `Py` contains the built-in functions of Python (some of them).
-String-related functions (that are in Python's `str` class) are 
-in `Py.str`. As an alternative, you can also use the class `PyStr`. 
-List-related functions (that are in Python's `list` class) are 
+String-related functions (that are in Python's `str` class) are
+in `Py.str`. As an alternative, you can also use the class `PyStr`.
+List-related functions (that are in Python's `list` class) are
 in `Py.list`. As an alternative, you can also use the class `PyList`.
 
 Python to PyJava
