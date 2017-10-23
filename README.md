@@ -1,3 +1,11 @@
+**New (Oct 23, 2017):** If you want to work with Java but you need something
+similar to Python, I suggest [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)).
+Kotlin knows all these things that I implemented here. For instance,
+take the first example (see below): reverse the digits of an integer,
+and the result must also be an integer: `val res = number.toString().reversed().toInt()`.
+Kotlin is quite similar to Python, it runs on the JVM, much simpler than
+Java, and fun to use. Try Kotlin!
+
 **New (Jan 9, 2017):** This project is not maintained anymore. It was fun
 for 2 weeks, but then I realized I won't use it. If you want to add something
 to it, make a fork. Thanks.
