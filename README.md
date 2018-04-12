@@ -1,3 +1,11 @@
+**New (Apr 13, 2018):** If you want to stay on Java land, try Kotlin
+or Scala. They both have the features that I tried to do in this project
+and they offer a lot more. Another very nice language is C# and thanks
+to .NET Core, it works flawlessly on Linux too. In C# I also missed some
+features of Python, so I have a similar project to this one.
+You can find it here:
+[https://github.com/jabbalaci/JabbaCustomExtensions-for-C-Sharp](https://github.com/jabbalaci/JabbaCustomExtensions-for-C-Sharp).
+
 **New (Oct 23, 2017):** If you want to work with Java but you need something
 similar to Python, I suggest [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)).
 Kotlin knows all these things that I implemented here. For instance,
