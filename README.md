@@ -1,3 +1,6 @@
+**New (Oct 17, 2020):** The project was converted to a Gradle project.
+It is still not maintained :)
+
 **New (Apr 13, 2018):** If you want to stay on Java land, try Kotlin
 or Scala. They both have the features that I tried to do in this project
 and they offer a lot more. Another very nice language is C# and thanks
